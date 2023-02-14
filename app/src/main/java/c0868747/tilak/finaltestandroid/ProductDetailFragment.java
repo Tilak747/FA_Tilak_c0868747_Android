@@ -1,6 +1,5 @@
 package c0868747.tilak.finaltestandroid;
 
-import android.location.Location;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,6 +77,8 @@ public class ProductDetailFragment extends Fragment implements OnMapReadyCallbac
                     this.vendor = vendor;
                     if(vendor != null){
 
+
+
                         LatLng vendorLocation = new LatLng(vendor.getLat(),vendor.getLng());
                         if(googleMap!=null){
                             googleMap.clear();
@@ -96,7 +97,13 @@ public class ProductDetailFragment extends Fragment implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
+        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        googleMap.getUiSettings().setCompassEnabled(true);
+        googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+        googleMap.getUiSettings().setAllGesturesEnabled(true);
+        googleMap.getUiSettings().setMapToolbarEnabled(true);
+        googleMap.getUiSettings().setTiltGesturesEnabled(false);
         this.googleMap = googleMap;
-
+        loadData();
     }
 }

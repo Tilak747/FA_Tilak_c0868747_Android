@@ -68,7 +68,7 @@ public class AddProductFragment extends Fragment {
             }
         });
 
-        viewModel.getVendors().observe(requireActivity(),vendors -> {
+        viewModel.getVendors().observe(getViewLifecycleOwner(),vendors -> {
             registeredVendors = vendors;
 
             List<String> registeredVendorNames = new ArrayList<>();
