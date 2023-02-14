@@ -17,29 +17,29 @@
         />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnAddProduct"
+        android:id="@+id/btnEdit"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add_product"
+        android:text="@string/item_option_edit"
         android:textAllCaps="false"
         android:textAlignment="viewStart"
         android:textColor="@color/black"
-        app:icon="@drawable/ic_baseline_add_24"
-        app:iconTint="?attr/colorPrimary"
+        app:icon="@drawable/menu_edit"
+        app:iconTint="@null"
         />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnAddVendor"
+        android:id="@+id/btnDelete"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add_vendor"
+        android:text="@string/item_option_delete"
         android:textAllCaps="false"
         android:textAlignment="viewStart"
         android:textColor="@color/black"
-        app:icon="@drawable/ic_baseline_add_24"
-        app:iconTint="?attr/colorSecondary"
+        app:icon="@drawable/menu_delete"
+        app:iconTint="@null"
         android:layout_marginTop="8dp"
         />
 

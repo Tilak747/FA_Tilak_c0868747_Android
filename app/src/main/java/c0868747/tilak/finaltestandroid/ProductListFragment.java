@@ -52,12 +52,28 @@ public class ProductListFragment extends Fragment {
         ProductListAdapter.ProductItemListener listener = new ProductListAdapter.ProductItemListener() {
             @Override
             public void viewProduct(Product product) {
-
+                Bundle bundle = new Bundle();
+                bundle.putInt("id",product.getId());
+                Navigation.findNavController(requireActivity(),R.id.fragContainerView)
+                        .navigate(R.id.action_productListFragment_to_productDetailFragment,bundle);
             }
 
             @Override
             public void showMenu(Product product) {
+                BsItemOptions.ActionProvider provider = new BsItemOptions.ActionProvider() {
+                    @Override
+                    public void edit() {
+                        editProduct(product);
+                    }
 
+                    @Override
+                    public void delete() {
+                        deleteProduct(product);
+                    }
+                };
+                BsItemOptions options = new BsItemOptions();
+                options.provider = provider;
+                options.show(getChildFragmentManager(),"ITEM_OPTIONS");
             }
         };
 
@@ -104,6 +120,16 @@ public class ProductListFragment extends Fragment {
         });
 
         loadProducts(lastSearch);
+    }
+
+    private void deleteProduct(Product product){
+        viewModel.delete(product);
+    }
+    private void editProduct(Product product){
+        Bundle bundle = new Bundle();
+        bundle.putInt("id",product.getId());
+        Navigation.findNavController(requireActivity(),R.id.fragContainerView)
+                .navigate(R.id.action_productListFragment_to_addProductFragment,bundle);
     }
 
     private void loadProducts(String keyword){

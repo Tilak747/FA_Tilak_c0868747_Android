@@ -22,5 +22,17 @@
     <string name="add_vendor">Add a vendor</string>
     <string name="add_product">Add a product</string>
 
+    <string name="item_option_edit">Edit Product</string>
+    <string name="item_option_delete">Delete Product</string>
+
     <string name="title_add_option">Options</string>
+
+    <string-array name="vendor_names">
+        <item>Amazon</item>
+        <item>Best Buy</item>
+        <item>Walmart</item>
+        <item>Tone Tai</item>
+        <item>Canada Electronics</item>
+        <item>Sunny Market</item>
+    </string-array>
 </resources>

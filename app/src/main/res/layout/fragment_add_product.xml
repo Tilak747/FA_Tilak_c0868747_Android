@@ -86,31 +86,28 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/MyInput"
-                app:endIconMode="dropdown_menu"
-                android:hint="@string/hint_vendor"
-                android:layout_marginTop="8dp"
-                >
+                android:layout_marginTop="16dp"
+                android:paddingHorizontal="8dp"
+                android:text="@string/hint_vendor" />
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/vendor_names" />
 
-                <AutoCompleteTextView
-                    android:id="@+id/actvVendor"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="12dp"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.chip.Chip
+            <TextView
                 android:id="@+id/chipAddAnotherVendor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_add_vendor"
-                app:chipIcon="@drawable/ic_baseline_add_24"
                 android:layout_gravity="end"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:layout_marginTop="8dp"
+                android:drawableEnd="@drawable/ic_baseline_add_24"
                 app:ensureMinTouchTargetSize="true"
                 />
 

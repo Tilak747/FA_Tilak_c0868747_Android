@@ -10,33 +10,33 @@ import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-import c0868747.tilak.finaltestandroid.databinding.BsAddOptionsBinding;
+import c0868747.tilak.finaltestandroid.databinding.BsItemOptionsBinding;
 
-public class BsAddOptions extends BottomSheetDialogFragment {
+public class BsItemOptions extends BottomSheetDialogFragment {
+
+    BsItemOptionsBinding binding;
 
     interface ActionProvider{
-        void addProduct();
-        void addVendor();
+        void edit();
+        void delete();
     }
     ActionProvider provider;
-
-    BsAddOptionsBinding binding;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = BsAddOptionsBinding.inflate(inflater,container,false);
+        binding = BsItemOptionsBinding.inflate(inflater,container,false);
         return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        binding.btnAddProduct.setOnClickListener(v->{
-            provider.addProduct();
+        binding.btnEdit.setOnClickListener(v ->{
+            provider.edit();
             dismiss();
         });
-        binding.btnAddVendor.setOnClickListener(v->{
-            provider.addVendor();
+        binding.btnDelete.setOnClickListener(v ->{
+            provider.delete();
             dismiss();
         });
     }
