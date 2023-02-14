@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:text="@string/title_add_option"
+        android:textAlignment="center"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddProduct"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_product"
+        android:textAllCaps="false"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        app:icon="@drawable/ic_baseline_add_24"
+        app:iconTint="?attr/colorPrimary"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddVendor"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_vendor"
+        android:textAllCaps="false"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        app:icon="@drawable/ic_baseline_add_24"
+        app:iconTint="?attr/colorSecondary"
+        android:layout_marginTop="8dp"
+        />
+
+
+
+</LinearLayout>
