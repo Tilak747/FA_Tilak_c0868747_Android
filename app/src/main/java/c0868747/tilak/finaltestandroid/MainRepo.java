@@ -22,12 +22,34 @@ public class MainRepo {
         this.executorService = executorService;
     }
 
-    LiveData<Product> getProduct(int id){
+    void addProduct(Product product){
+        executorService.execute( () -> {
+            myDao.insert(product);
+        });
+    }
+    void updateProduct(Product product){
+        executorService.execute( () -> {
+            myDao.update(product);
+        });
+    }
+
+    LiveData<Product> getProduct(long id){
         return myDao.getProduct(id);
     }
 
     LiveData<List<Product>> getProduct(String filter){
         return myDao.getAllProducts(filter);
+    }
+
+    LiveData<List<Vendor>> getVendors(){
+        return myDao.getAllVendors();
+    }
+
+    Vendor getVendor(long id){
+        return myDao.getVendor(id);
+    }
+    LiveData<Vendor> getVendor(String name){
+        return myDao.getVendor(name);
     }
 
     void delete(Product product){

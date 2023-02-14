@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -61,6 +62,9 @@ dependencies {
     //Dependency Injection
     implementation("com.google.dagger:hilt-android:$hilt_version")
     annotationProcessor("com.google.dagger:hilt-compiler:$hilt_version")
+
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
 
 
 }

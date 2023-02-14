@@ -3,6 +3,7 @@
 
     <string name="fragment_product_detail">Product Detail</string>
     <string name="fragment_add_product">Add New Product</string>
+    <string name="fragment_update_product">Update Product</string>
     <string name="fragment_add_vendor">Add New Vendor</string>
     <string name="fragment_product_list">Product List</string>
 
@@ -17,6 +18,7 @@
     <string name="hint_vendor_lng">Longitude</string>
 
     <string name="btn_save">Save</string>
+    <string name="btn_update">Update</string>
     <string name="btn_add_vendor">Add another vendor</string>
 
     <string name="add_vendor">Add a vendor</string>
@@ -35,4 +37,6 @@
         <item>Canada Electronics</item>
         <item>Sunny Market</item>
     </string-array>
+
+    <string name="google_map_api">AIzaSyBLrn9FoAG6EukNf1ftZquooY92axtUT8M</string>
 </resources>

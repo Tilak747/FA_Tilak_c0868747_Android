@@ -21,12 +21,29 @@ public class MainViewModel extends ViewModel {
         this.repo = repo;
     }
 
-    LiveData<Product> getProduct(int id){
+    void addProduct(Product product){
+        repo.addProduct(product);
+    }
+    void updateProduct(Product product){
+        repo.updateProduct(product);
+    }
+
+    LiveData<Product> getProduct(long id){
         return repo.getProduct(id);
     }
 
     LiveData<List<Product>> getProduct(String filter){
         return repo.getProduct(filter);
+    }
+
+    LiveData<List<Vendor>> getVendors(){
+        return repo.getVendors();
+    }
+    Vendor getVendor(long id){
+        return repo.getVendor(id);
+    }
+    LiveData<Vendor> getVendor(String name){
+        return repo.getVendor(name);
     }
 
     void delete(Product product){

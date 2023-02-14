@@ -33,12 +33,16 @@ public abstract class MyDao {
     public abstract void delete(Product product);
 
     @Query("Select * from product where id == :id")
-    public abstract LiveData<Product> getProduct(int id);
+    public abstract LiveData<Product> getProduct(long id);
 
     @Query("Select * from product where name LIKE '%' || :filter || '%' OR description LIKE '%' || :filter || '%'")
     public abstract LiveData<List<Product>> getAllProducts(String filter);
 
     @Query("SELECT * FROM vendors")
     public abstract LiveData<List<Vendor>> getAllVendors();
+    @Query("SELECT * FROM vendors WHERE vendor_id == :id")
+    public abstract Vendor getVendor(long id);
+    @Query("SELECT * FROM vendors WHERE name == :name")
+    public abstract LiveData<Vendor> getVendor(String name);
 
 }

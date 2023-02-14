@@ -20,9 +20,9 @@ import androidx.room.PrimaryKey;
 public class Product {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    private int id;
+    private long id;
     @ColumnInfo(name = "vendor_id")
-    private int vendorId;
+    private long vendorId;
 
     private String name;
     private String description;
@@ -43,19 +43,19 @@ public class Product {
         this.vendorName = vendorName;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getVendorId() {
+    public long getVendorId() {
         return vendorId;
     }
 
-    public void setVendorId(int vendorId) {
+    public void setVendorId(long vendorId) {
         this.vendorId = vendorId;
     }
 

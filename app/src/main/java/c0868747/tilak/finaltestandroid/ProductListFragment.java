@@ -49,11 +49,20 @@ public class ProductListFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
+        viewModel.getProduct("").observe(requireActivity(),products -> {
+            if(!products.isEmpty()){
+                binding.toolbar.setTitle("Product List ("+products.size()+")");
+            }
+            else{
+                binding.toolbar.setTitle(R.string.fragment_product_list);
+            }
+        });
+
         ProductListAdapter.ProductItemListener listener = new ProductListAdapter.ProductItemListener() {
             @Override
             public void viewProduct(Product product) {
                 Bundle bundle = new Bundle();
-                bundle.putInt("id",product.getId());
+                bundle.putLong("id",product.getId());
                 Navigation.findNavController(requireActivity(),R.id.fragContainerView)
                         .navigate(R.id.action_productListFragment_to_productDetailFragment,bundle);
             }
@@ -127,7 +136,7 @@ public class ProductListFragment extends Fragment {
     }
     private void editProduct(Product product){
         Bundle bundle = new Bundle();
-        bundle.putInt("id",product.getId());
+        bundle.putLong("id",product.getId());
         Navigation.findNavController(requireActivity(),R.id.fragContainerView)
                 .navigate(R.id.action_productListFragment_to_addProductFragment,bundle);
     }
@@ -139,6 +148,7 @@ public class ProductListFragment extends Fragment {
         lastSearch = keyword;
         viewModel.getProduct(keyword).observe(requireActivity(), products -> {
             adapter.setList((ArrayList<Product>) products);
+            adapter.notifyDataSetChanged();
         });
     }
 }
